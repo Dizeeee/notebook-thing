@@ -1,0 +1,19 @@
+<div class="page">
+    <div class="navbar">
+        <div class="title">
+            <h1>Notebook</h1>
+        </div>
+        <div class="pagenum">
+            <h2>Page {{ pageNum || -1 + 1 }}</h2>
+        </div>
+        <div class="controls">
+            <!-- show link to pagenum - 1 if pagenum is greater than 0 -->
+            <a class="navButton" *ngIf="pageNum > 1" href="{{pageNum - 1}}">Previous</a>
+            <a class="navButton" *ngIf="pageNum < 5" href="{{pageNum + 1}}">Next</a>
+        </div>
+    </div>
+    
+    <div class="editor">
+        <p contenteditable="true" (input)="saveData($event)" [innerHTML]="content"></p>
+    </div>
+</div>
