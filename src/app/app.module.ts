@@ -14,12 +14,9 @@ import { RouterModule, UrlSegment } from '@angular/router';
       {
         matcher: (url) => {
           let num: number = parseInt(url[0].path);
-          console.log(num);
 
           if (num > 5 || num < 1) return null;
           if (isNaN(num)) return null;
-
-          console.log('works');
 
           return {
             consumed: url,
